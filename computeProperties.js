@@ -14,6 +14,19 @@ function computeGains() {
 	  let newWealth = (wealth * (1 - exchange1Fee) - networkFee) * (1 + (percent / 100.0)) * (1 - exchange2Fee) * (1 - transferBackFee);
 	  
 	  let symbol = $("#crypto").val();
+
+    console.log(fromPrice)
+    console.log(toPrice)
+    console.log(percent)
+    console.log(exchange1Fee)
+    console.log(exchange2Fee)
+    console.log( networkFee )
+    console.log(transferBackFee )
+    console.log(wealth)
+    console.log(newWealth )
+
+    
+
 	  $("#gains").text(((newWealth - wealth) / wealth * 100).toFixed(2) + "% gains to " + newWealth + " " + symbol);
 }
 
@@ -21,6 +34,22 @@ function updateStrings() {
 		let from = $('#from-exchange select option:selected').val();
 		let to = $('#to-exchange select option:selected').val();
 		let symbol = $("#crypto").val();
+
+    let fromPrice = parseFloat($('#from-exchange select option:selected').attr("price")).toFixed(2);
+    let toPrice = parseFloat($('#to-exchange select option:selected').attr("price")).toFixed(2);
+    $("#yourExchange").text("$"+fromPrice);
+    $("#otherExchange").text("$"+toPrice);
+    if (fromPrice<toPrice) 
+    {
+      $("#yourExchange").css("color","green");
+      $("#otherExchange").css("color","red");
+    }
+    else 
+    {
+      $("#otherExchange").css("color","green")
+      $("#yourExchange").css("color","red")
+    }
+
 
 		$(".symbol").text(symbol);
 		$(".to-exchange-name").text(to);
@@ -78,15 +107,20 @@ function fetchForSymbol(symbol) {
 		    });
 }
 
-$("#crypto").change(function() {
-		let symbol = $(this).val();
-		fetchForSymbol(symbol);
+$(function() {
+
+  $("#crypto").change(function() {
+    let symbol = $(this).val();
+    fetchForSymbol(symbol);
 });
 
 $("select, input").on("change blur keyup", function() {
-		updateStrings();
-	  computeGains();
+    updateStrings();
+    computeGains();
 });
 
 fetchForSymbol('btc');
+
+
+});
 
