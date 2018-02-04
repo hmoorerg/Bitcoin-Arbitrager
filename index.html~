@@ -34,25 +34,18 @@
     
       <br>
 
-      <div id='gains' class="display-3 jumbotron centeredText">
+      <div id='gains' class="display-4 jumbotron centeredText">
         </div>
         
 <div class="centerBox">
       <p style="text-align:center;">Your crypto : </p>
       <div class="input-group mb-3">
         <select class="custom-select" id="crypto">
-          <option value='btc'>Bitcoin</option>
+          <option value='btc'>BTC</option>
           <option value='eth'>Ethereum</option>
           <option value='xrp'>Ripple</option>
           <option value='xmr'>Monero</option>
           <option value='ltc'>Litecoin</option>
-          <option value='bch'>Bitcoin Cash</option>
-          <option value='neo'>NEO</option>
-          <option value='ETC'>Ethereum Classic</option>
-          <option value='dash'>Dash</option>
-          <option value='eos'>EOS</option>
-
-
         </select>
       </div>
       <p class="centeredText">Enter your current coin exchange : </p>
@@ -99,7 +92,7 @@
     <div class="centerBox centeredText tab-pane fade in" id="panel2" role="tabpanel">
       
       <div id='network-fee'>
-        Network fee: (measured in <span class='symbol'></span>)
+        network fee: (measured in <span class='symbol'></span>)
         <input class="form-control" type=text value="0.00061710"> 
 
         How much will you sell? (measured in <span class='symbol'></span>)
@@ -107,7 +100,7 @@
         
       </div>
       <div id='from-exchange-withdrawl-fee'>
-        % <span class='from-exchange-name'></span> withdrawal fee :
+        % <span class='from-exchange-name'></span> withdrawl fee :
         <input class="form-control" type=text value="0.01">
       </div>
 
@@ -119,7 +112,7 @@
 
         <div id='to-exchange-withdrawl-fee'>
           % <span class='to-exchange-name'></span>
-          withdrawal fee:
+          withdrawl fee:
           <input class="form-control" type=text value="0.01">
         </div>
 

@@ -27,7 +27,7 @@ function computeGains() {
 
     
 
-	  $("#gains").text(((newWealth - wealth) / wealth * 100).toFixed(2) + "% profit to " + newWealth.toFixed(4) + " " + symbol);
+	  $("#gains").text(((newWealth - wealth) / wealth * 100).toFixed(2) + "% profit");
 }
 
 function updateStrings() {
@@ -40,7 +40,7 @@ function updateStrings() {
     $("#yourExchange").text("$"+fromPrice.toFixed(2));
     $("#otherExchange").text("$"+toPrice.toFixed(2));
 
-    console.log("From :"+fromPrice+" To :"+toPrice);
+    
     if (fromPrice<=toPrice) 
     {
       
