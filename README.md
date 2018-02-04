@@ -1,4 +1,4 @@
 # HackathonYubiko
 GO, HTML, CSS
 
-Created during SF Hackathon (Enter full name later)
+Created during SF Developerweek 2018
