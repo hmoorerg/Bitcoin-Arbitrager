@@ -1,0 +1,67 @@
+<head>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+	<link rel="stylesheet" type="text/css" href="style.css">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	<script src="./computeProperties.js"></script>
+</head>
+
+<body>
+	<div class="navbar navbar-dark bg-primary">
+		<a class="navbar-brand" href="#page-top">Arbrtige Console</a>
+		<a class="navbar-brand" href="#page-top"> <i class="fab fa-btc"></i></a>
+	</div>
+
+	<div id="centerBox">
+		<br>
+		<p style="text-align:center;">Your crypto : </p>
+		<div class="input-group mb-3">
+			<select class="custom-select" id="inputGroupSelect01">
+				<option selected>Choose...</option>
+				<option value="1">Bitcoin</option>
+				<option value="2">Dogecoin</option>
+				<option value="3">GarlicCoin</option>
+			</select>
+		</div>
+		<p style="text-align:center;">Enter your current coin exchange : </p>
+		<div class="input-group mb-3">
+			<select class="custom-select" id="inputGroupSelect01">
+				<option selected>Choose...</option>
+				<option value="1">Exchange 1</option>
+				<option value="2">Exchange 2</option>
+				<option value="3">Exchange 3</option>
+			</select>
+		</div>
+		<br>
+		<div id=currencyDisplayArea>
+			<div class="row">
+				<div class="card col-sm-6" style="width: 20rem; padding : 20px;">
+					<div class="card-block">
+						<h4 class="card-title centeredText">Your Exchange</h4>
+						<p class="text-warning card-text centeredText" style="font-size: 30px;">$80</p>
+					</div>
+				</div>
+				<div class="card col-sm-6" style="width: 20rem; padding : 20px;">
+					<div class="card-block">
+						<h4 class="card-title centeredText">Highest Exchange</h4>
+						<p class="text-success card-text centeredText" style="font-size: 30px">$91</p>
+
+						<select class="custom-select" id="inputGroupSelect01">
+							<option selected>Choose another exchange...</option>
+							<option value="1">Exchange 1 - $83 </option>
+							<option value="2">Exchange 2 - $74 </option>
+							<option value="3">Exchange 3 - $91 </option>
+						</select>
+					</div>
+				</div>
+			</div>
+		</div>
+		<br>
+		<br>
+			<img src="https://www.stocktrader.com/wp-content/uploads/2013/12/FINVIZ_chart.png" style="width:80%; display:block; margin-left:auto;margin-right:auto;">
+	</div>
+
+</body>
