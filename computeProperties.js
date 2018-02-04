@@ -3,12 +3,12 @@ function computeGains() {
 		let toPrice = $('#to-exchange select option:selected').attr('price');
 	  let percent = parseFloat((toPrice - fromPrice) / fromPrice * 100);
 	  
-	  let exchange1Fee = $("#from-exchange-withdrawl-fee input").val();
-	  let exchange2Fee = $("#to-exchange-withdrawl-fee input").val();
+	  let exchange1Fee = parseFloat($("#from-exchange-withdrawl-fee input").val())/100;
+	  let exchange2Fee = parseFloat($("#to-exchange-withdrawl-fee input").val())/100;
 	  
 	  let networkFee = parseFloat($("#network-fee input").val());
 	  
-	  let transferBackFee = parseFloat($("#transfer-back-fee input").val());
+	  let transferBackFee = parseFloat($("#transfer-back-fee input").val())/100;
 
 		let wealth = parseFloat($("#amount-to-sell").val());
 	  let newWealth = (wealth * (1 - exchange1Fee) - networkFee) * (1 + (percent / 100.0)) * (1 - exchange2Fee) * (1 - transferBackFee);
@@ -27,7 +27,7 @@ function computeGains() {
 
     
 
-	  $("#gains").text(((newWealth - wealth) / wealth * 100).toFixed(2) + "% gains to " + newWealth + " " + symbol);
+	  $("#gains").text(((newWealth - wealth) / wealth * 100).toFixed(2) + "% profit to " + newWealth.toFixed(4) + " " + symbol);
 }
 
 function updateStrings() {
@@ -35,19 +35,27 @@ function updateStrings() {
 		let to = $('#to-exchange select option:selected').val();
 		let symbol = $("#crypto").val();
 
-    let fromPrice = parseFloat($('#from-exchange select option:selected').attr("price")).toFixed(2);
-    let toPrice = parseFloat($('#to-exchange select option:selected').attr("price")).toFixed(2);
-    $("#yourExchange").text("$"+fromPrice);
-    $("#otherExchange").text("$"+toPrice);
-    if (fromPrice<toPrice) 
+    let fromPrice = parseFloat($('#from-exchange select option:selected').attr("price"));
+    let toPrice = parseFloat($('#to-exchange select option:selected').attr("price"));
+    $("#yourExchange").text("$"+fromPrice.toFixed(2));
+    $("#otherExchange").text("$"+toPrice.toFixed(2));
+
+    console.log("From :"+fromPrice+" To :"+toPrice);
+    if (fromPrice<=toPrice) 
     {
-      $("#yourExchange").css("color","green");
-      $("#otherExchange").css("color","red");
+      
+      console.log("From<to");
+
+      $("#yourExchange").css("color","red");
+      $("#otherExchange").css("color","green");
     }
     else 
     {
-      $("#otherExchange").css("color","green")
-      $("#yourExchange").css("color","red")
+      
+      console.log("From>to");
+
+      $("#otherExchange").css("color","red");
+      $("#yourExchange").css("color","green");
     }
 
 

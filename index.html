@@ -11,89 +11,115 @@
 
 <body>
 	<div class="navbar navbar-dark bg-primary">
-		<a class="navbar-brand" href="#page-top">Arbrtige Console</a>
+		<a class="navbar-brand" href="#page-top">
+			Arbitrage
+			Console</a>
 		<a class="navbar-brand" href="#page-top"> <i class="fab fa-btc"></i></a>
 	</div>
 
 
-<div class="spinner-region">
-	<div id="centerBox">
-		<br>
-		<p style="text-align:center;">Your crypto : </p>
-		<div class="input-group mb-3">
-			<select class="custom-select" id="crypto">
-				<option value='btc'>BTC</option>
-				<option value='eth'>Ethereum</option>
-				<option value='xrp'>Ripple</option>
-				<option value='xmr'>Monero</option>
-				<option value='ltc'>Litecoin</option>
-			</select>
-		</div>
-		<p class="centeredText">Enter your current coin exchange : </p>
-		<div id='from-exchange' class="input-group mb-3">
-			<select class="custom-select exchanges" id="inputGroupSelect01">
-				<option value="1">Exchange 1</option>
-				<option value="2">Exchange 2</option>
-				<option value="3">Exchange 3</option>
-			</select>
-		</div>
-		<br>
-		<div id=currencyDisplayArea>
-			<div class="row">
-				<div class="card col-sm-6" style="width: 20rem; padding : 20px;">
-					<div class="card-block">
-						<h4 class="card-title centeredText">Your Exchange</h4>
-						<p id="yourExchange" class="card-text centeredText" style="font-size: 30px;">$80</p>
-					</div>
-				</div>
-				<div class="card col-sm-6" style="width: 20rem; padding : 20px;">
-					<div id="to-exchange" class="card-block">
-						<h4 class="card-title centeredText">Highest Exchange</h4>
-						<p id="otherExchange" class="card-text centeredText" style="font-size: 30px">$91</p>
+	<!-- Nav tabs -->
+<ul class="nav nav-tabs nav-justified">
+    <li class="nav-item">
+        <a class="nav-link active" data-toggle="tab" href="#panel1" role="tab">Basic</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#panel2" role="tab">Advanced</a>
+    </li>
+</ul>
 
-						<select class="exchanges custom-select" id="inputGroupSelect01">
-						</select>
+<div class="tab-content card">
+
+	<div class="tab-pane fade in show active" id="panel1" role="tabpanel">
+		
+			<br>
+
+			<div id='gains' class="display-4 jumbotron centeredText">
+        </div>
+        
+<div class="centerBox">
+			<p style="text-align:center;">Your crypto : </p>
+			<div class="input-group mb-3">
+				<select class="custom-select" id="crypto">
+					<option value='btc'>BTC</option>
+					<option value='eth'>Ethereum</option>
+					<option value='xrp'>Ripple</option>
+					<option value='xmr'>Monero</option>
+					<option value='ltc'>Litecoin</option>
+				</select>
+			</div>
+			<p class="centeredText">Enter your current coin exchange : </p>
+			<div id='from-exchange' class="input-group mb-3">
+				<select class="custom-select exchanges" id="inputGroupSelect01">
+					<option value="1">Exchange 1</option>
+					<option value="2">Exchange 2</option>
+					<option value="3">Exchange 3</option>
+				</select>
+			</div>
+
+			<br>
+			</div>
+			<div id=currencyDisplayArea>
+				<div class="row">
+					<div class="card col-sm-6" style="width: 20rem; padding : 20px;">
+						<div class="card-block">
+							<h4 class="card-title centeredText">Your Exchange</h4>
+							<p id="yourExchange" class="card-text centeredText" style="font-size: 30px;">$80</p>
+						</div>
+					</div>
+					<div class="card col-sm-6" style="width: 20rem; padding : 20px;">
+						<div id="to-exchange" class="card-block">
+							<h4 class="card-title centeredText">Highest Exchange</h4>
+							<p id="otherExchange" class="card-text centeredText" style="font-size: 30px">$91</p>
+
+							<select class="exchanges custom-select" id="inputGroupSelect01">
+							</select>
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-		<br>
-		<br>
-		<img src="https://www.stocktrader.com/wp-content/uploads/2013/12/FINVIZ_chart.png" style="width:80%; display:block; margin-left:auto;margin-right:auto;">
-		<br>
-		<div id='network-fee'>
-			<span class='symbol'></span>
-			network fee: 
-			<input type=text value="0.00061710"> <span class='symbol'></span>
 
 			<br>
-			How much will you sell?
-			<input id='amount-to-sell' type=text value="1" \>
-			<span class='symbol'></span>
-		</div>
-		    <div id='from-exchange-withdrawl-fee'>
-      		<span class='from-exchange-name'></span>
-      		withdrawl fee:
-      		<input type=text value="0.01"> %
-    		</div>
 
-
-		<div id='transfer-back-fee'>
-			  Fee to get money back:
-			    <input type=text value="0.01"> %
-		</div>
-
-    <div id='to-exchange-withdrawl-fee'>
-      <span class='to-exchange-name'></span>
-      withdrawl fee:
-      <input type=text value="0.01"> %
+			
+        
+        <br>
+        <br>
+        <br>
+        <br>
     </div>
+    
+    <div class="centerBox centeredText tab-pane fade in" id="panel2" role="tabpanel">
+    	
+    	<div id='network-fee'>
+				network fee: (measured in <span class='symbol'></span>)
+				<input class="form-control" type=text value="0.00061710"> 
 
-		<div id='gains'>
+				How much will you sell? (measured in <span class='symbol'></span>)
+				<input class="form-control" id='amount-to-sell' type=text value="1"\>
+				
+			</div>
+			<div id='from-exchange-withdrawl-fee'>
+				% <span class='from-exchange-name'></span> withdrawl fee :
+				<input class="form-control" type=text value="0.01">
+			</div>
 
-		</div>
-	</div>
+
+			<div id='transfer-back-fee'>
+				% Fee to get money back :
+				<input class="form-control" type=text value="0.01">
+			</div>
+
+        <div id='to-exchange-withdrawl-fee'>
+          % <span class='to-exchange-name'></span>
+          withdrawl fee:
+          <input class="form-control" type=text value="0.01">
+        </div>
+        <br>
+
+    </div>
+    
+
 </div>
-
 
 </body>
